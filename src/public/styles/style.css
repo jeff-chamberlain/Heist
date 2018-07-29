@@ -1,0 +1,161 @@
+@font-face {
+  font-family: HelveticaNeue;
+  src: url(../fonts/HelveticaNeueLTStd-Blk.otf);
+}
+
+body {
+  font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+#loading {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  background: black;
+}
+
+#logo {
+  margin: auto;
+  width: 300px;
+}
+
+#selectGame {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100%;
+}
+
+.md-button.oval {
+  border-radius: 18px;
+  font-size: 14px;
+  margin: 0 auto 20px auto;
+  padding: 0 10px;
+}
+
+.md-button.outline {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  padding: 5px;
+  margin: 20px;
+}
+
+#game {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+#result {
+  width: 100%;
+  max-width: 309px;
+}
+
+#layout {
+  width: 100%;
+  max-width: 1099px;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0,0,0,.8);
+  width: 100%;
+  height: 100%
+}
+
+#game>div {
+  width: 100%;
+}
+
+#gameHeader, #gameFooter {
+  background: rgba(100, 100, 100, 0.8)
+}
+
+#gameTitle {
+  font-size: 20pt;
+}
+
+#gameWindow {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 1s;
+}
+
+#gameContent {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background: rgba(33,33,33,0.6);
+  font-size: 16pt;
+}
+
+#gateIndicatorWrapper {
+  width: 100%;
+  text-align: left;
+}
+
+#gateIndicator {
+  position: relative;
+  font-size: 10pt;
+  left: 33.33%;
+}
+
+#gateIndicator>div{
+  text-align: center;
+  transform: translate(-50%, 0);
+}
+
+#reset:hover {
+  cursor: pointer;
+}
+
+#reset:hover i {
+  color: white;
+}
+
+#reset i {
+  text-align: center;
+  font-size: 36pt;
+  color: rgb(76,175,80);
+}
+
+#gameFooter>div {
+  height: 100%;
+}
+
+#gameFooter button {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 18pt;
+}
+
+#timer {
+	font-size: 32px;
+	color: white;
+  width: 100%;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+  text-transform: uppercase;
+}
+
+#countdown {
+	color: white;
+	font-size: 64px;
+	transition: opacity 1s;
+  opacity: 0;
+}
+
+#countdown[class*="-remove"] {
+	transition: none;
+  	opacity: 1;
+}

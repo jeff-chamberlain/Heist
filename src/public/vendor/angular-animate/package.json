@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      "angular-animate",
+      "/www/sites/Heist/vendor"
+    ]
+  ],
+  "_from": "angular-animate@*",
+  "_id": "angular-animate@1.6.8",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-animate",
+  "_nodeVersion": "8.9.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angular-animate-1.6.8.tgz_1513894170504_0.8935921711381525"
+  },
+  "_npmUser": {
+    "email": "angular-core+npm@google.com",
+    "name": "angularcore"
+  },
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-animate",
+    "raw": "angular-animate",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.6.8.tgz",
+  "_shasum": "f38554c9c68770c9588b39c49920bc24e0d6f98a",
+  "_shrinkwrap": null,
+  "_spec": "angular-animate",
+  "_where": "/www/sites/Heist/vendor",
+  "author": {
+    "email": "angular-core+npm@google.com",
+    "name": "Angular Core Team"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS module for animations",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-zKaq9vtJ+QPV6q159mJkb6uKa3SiTe0PXj+W9WO3cDhLly8LuQHYRteAAD3/SqlS7GMq2SFlJvs7VQduPJpUQw==",
+    "shasum": "f38554c9c68770c9588b39c49920bc24e0d6f98a",
+    "tarball": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.6.8.tgz"
+  },
+  "gitHead": "cb64242dbe2023fc1186a849387c17408ee4b1b0",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-animate": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "animation",
+    "browser",
+    "client-side",
+    "framework"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "akalinovski",
+      "email": "a.kalinovski@gmail.com"
+    },
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    }
+  ],
+  "name": "angular-animate",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.6.8"
+}

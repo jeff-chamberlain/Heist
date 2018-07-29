@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Heist - The Card Game</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.ico" /> -->
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="vendor/angular-material/angular-material.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css"/>
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+
+  </head>
+  <body ng-app="heistApp" ng-controller="AppCtrl" ng-cloak layout="column">
+    <div id="loading" flex layout="column" layout-align="center center" ng-show="loading">
+      <div>
+        <md-progress-circular class="md-primary" md-mode="indeterminate"></md-progress-circular>
+      </div>
+    </div>
+    <div id="selectGame" layout="column" layout-align="start center" ng-show="!loading && state==='select'">
+      <img id="logo" src="./img/Logo.png" />
+      <h1>SELECT YOUR HEIST</h1>
+      <div flex="noshrink" layout="column" layout-align="center center">
+        <div ng-repeat="(key, heist) in heists" style="width:100%;" layout-align="center center">
+          <md-button class="md-raised md-primary oval" style="width:100%;" ng-click="selectGame(key)">
+            {{heist.name}}
+          </md-button>
+        </div>
+      </div>
+      <div flex="noshrink" layout="row">
+        <div flex layout="row" layout-align="end center">
+          <md-button class="md-primary outline" ng-href="#" target="_blank">Buy the game</md-button>
+        </div>
+        <div flex layout="row" layout-align="start center">
+          <md-button class="md-primary outline" ng-href="#" target="_blank">Learn to play</md-button>
+        </div>
+      </div>
+    </div>
+    <div id="game" layout="column" flex layout-align="center center" ng-hide="state==='select'">
+      <div id="gameHeader" layout="row" layout-align="start center">
+        <div id="reset" ng-click="reset()"><i class="material-icons">keyboard_arrow_left</i></div>
+        <div flex>
+          <span id="gameTitle">{{game.name}}</span>
+        </div>
+      </div>
+      <div id="gameWindow" style="background-image: url('{{game.bgs[bgIndex]}}');" flex>
+        <div id="gameContent" layout="column" layout-align="start center">
+          <div flex id="countdownContainer" ng-show="state=='countdown' && secondsToStart < 4" flex layout="column" layout-align="center center">
+            <div id="countdown" class="count-value-{{secondsToStart}}">{{secondsToStart}}</div>
+          </div>
+          <div flex id="timer" ng-show="timerRunning && timer > 0" layout="column" layout-align="center center">
+            {{ timer | date: 'm:ss.sss' }}
+            <md-progress-linear class="md-warn" ng-show="timerRunning" md-mode="buffer" value="{{(timer / meterFullSeconds) * 100}}" md-buffer-value="{{(meterGate / meterFullSeconds) * 100}}">
+            </md-progress-linear>
+            <div id="gateIndicatorWrapper" ng-show="meterGate > 0 && state==='heist'">
+              <div id="gateIndicator" style="left: {{(meterGate / meterFullSeconds) * 100}}%">
+                <div>
+                  <div><i class="material-icons">arrow_drop_up</i></div>
+                  <div>TIME GATE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div flex id="getaway" ng-show="state==='intermission'" layout="column" layout-align="start center">
+            <br />
+            <span>Your heist time was {{heistSeconds | date: 'm:ss'}}</span>
+            <span>Prepare the getaway!</span>
+            <br />
+            <img id="layout" src="{{getawayLayout}}" />
+          </div>
+          <div flex id="result" ng-show="state==='postgame'" layout="column" layout-align="start center">
+            <br />
+            <span>Your heist time was {{heistSeconds | date: 'm:ss'}}</span>
+            <span>
+              You had {{getawayTimeRemaining | date: 'm:ss'}} left in your getaway!
+            </span>
+            <img id="result" ng-hide="failed" src="{{game.result}}" />
+            <div ng-show="failed">
+              <h1 style="color: red;">BUSTED!</h1>
+              <span ng-hide="timer > 0">Your time ran out!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="gameFooter" flex="20" layout="row" layout-align="center center">
+        <div id="actionButton" ng-hide="state==='countdown'" flex>
+          <md-button id="action" class="md-primary md-raised" ng-click="action()">
+            <span ng-show="state === 'pregame'" class="ng-scope" aria-hidden="false">PLAY HEIST</span>
+            <span ng-show="state === 'heist'" class="ng-scope ng-hide" aria-hidden="true">GET OUT!</span>
+            <span ng-show="state === 'intermission'" class="ng-scope ng-hide" aria-hidden="true">PLAY GETAWAY</span>
+            <span ng-show="state === 'getaway'" class="ng-scope ng-hide" aria-hidden="true">SAFEHOUSE!</span>
+            <span ng-show="state === 'postgame'" class="ng-scope ng-hide" aria-hidden="true">RESET</span>
+          </md-button>
+        </div>
+        <div ng-show="state==='getaway'" flex-gt-sm="25">
+          <md-button class="md-primary" ng-click="fail()">
+            Busted...
+          </md-button>
+        </div>
+      </div>
+  </div>
+
+
+    <!-- Simple audio playback -->
+    <audio id="heistBGM" preload="auto">
+      <source src="audio/HeistBGM.mp3" type="audio/mpeg">
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+
+    <audio id="getawayBGM" preload="auto">
+      <source src="audio/GetawayBGM.mp3" type="audio/mpeg">
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+
+    <!-- Scripts -->
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-animate/angular-animate.js"></script>
+    <script src="vendor/angular-aria/angular-aria.js"></script>
+    <script src="vendor/angular-material/angular-material.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="vendor/preloader/preloader.js"></script>
+  </body>
+</html>

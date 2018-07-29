@@ -1,0 +1,96 @@
+{
+  "_args": [
+    [
+      "angular-messages",
+      "/www/sites/Heist/vendor"
+    ]
+  ],
+  "_from": "angular-messages@*",
+  "_id": "angular-messages@1.6.8",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-messages",
+  "_nodeVersion": "8.9.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angular-messages-1.6.8.tgz_1513894240323_0.021170843625441194"
+  },
+  "_npmUser": {
+    "email": "angular-core+npm@google.com",
+    "name": "angularcore"
+  },
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-messages",
+    "raw": "angular-messages",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.6.8.tgz",
+  "_shasum": "4f1090b6ee38081fd073c5dfb7576016d18fc458",
+  "_shrinkwrap": null,
+  "_spec": "angular-messages",
+  "_where": "/www/sites/Heist/vendor",
+  "author": {
+    "email": "angular-core+npm@google.com",
+    "name": "Angular Core Team"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS module that provides enhanced support for displaying messages within templates",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-t8t3RA26KLScraeeE0FF9wflYO3txs+ND1A1L3nXT73bI99WjRgesNoh6eXc6206lksP+zEvGQTG1q1VU3rafQ==",
+    "shasum": "4f1090b6ee38081fd073c5dfb7576016d18fc458",
+    "tarball": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.6.8.tgz"
+  },
+  "gitHead": "06e9e3ac33075a2c2950e13c5fd97070fb280173",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-messages": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "browser",
+    "client-side",
+    "framework"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    }
+  ],
+  "name": "angular-messages",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.6.8"
+}
