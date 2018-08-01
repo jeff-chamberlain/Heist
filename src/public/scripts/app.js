@@ -142,6 +142,10 @@ angular.module('heistApp', ['ngMaterial'])
 		};
 
 		$scope.reset = function () {
+			heistBGM.pause ();
+			heistBGM.currentTime = 0.0;
+			getawayBGM.pause ();
+			getawayBGM.currentTime = 0.0;
 			$scope.game = undefined;
 			$scope.timestamp = 0;
 			$scope.heistSeconds = 0;
@@ -249,7 +253,7 @@ angular.module('heistApp', ['ngMaterial'])
 					'./img/gas8.png',
 					'./img/gas9.png'
 				],
-				result: './img/gas_result.png'
+				result: './img/gas_result.jpg'
 			},
 			Bank: {
 				name: 'Bank Job',
@@ -264,7 +268,7 @@ angular.module('heistApp', ['ngMaterial'])
 					'./img/bank7.png',
 					'./img/bank8.png',
 				],
-				result: './img/bank_result.png'
+				result: './img/bank_result.jpg'
 			},
 			Casino: {
 				name: 'Casino Gambit',
@@ -281,7 +285,7 @@ angular.module('heistApp', ['ngMaterial'])
 					'./img/casino9.png',
 					'./img/casino10.png',
 				],
-				result: './img/casino_result.png'
+				result: './img/casino_result.jpg'
 			},
 			Mansion: {
 				name: 'Mansion Abduction',
@@ -293,9 +297,8 @@ angular.module('heistApp', ['ngMaterial'])
 					'./img/mansion4.png',
 					'./img/mansion5.png',
 					'./img/mansion6.png',
-					'./img/mansion7.png',
 				],
-				result: './img/mansion_result.png'
+				result: './img/mansion_result.jpg'
 			}
 		};
 
@@ -304,10 +307,15 @@ angular.module('heistApp', ['ngMaterial'])
 
 		var imgSources = [
 			'./img/Logo.png',
-			'./img/gas_result.png',
-			'./img/bank_result.png',
-			'./img/casino_result.png',
-			'./img/mansion_result.png',
+			'./img/gas_result.jpg',
+			'./img/bank_result.jpg',
+			'./img/casino_result.jpg',
+			'./img/mansion_result.jpg',
+			'./img/getaway0.png',
+			'./img/getaway2.png',
+			'./img/getaway4.png',
+			'./img/getaway5.png',
+			'./img/getaway6.png'
 		];
 
 		preloader.preloadImages ( imgSources )

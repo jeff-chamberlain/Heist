@@ -56,7 +56,7 @@
           <span id="gameTitle">{{game.name}}</span>
         </div>
       </div>
-      <div id="gameWindow" style="background-image: url('{{game.bgs[bgIndex]}}');" flex>
+      <div id="gameWindow" class="imgDiv" style="background-image: url('{{game.bgs[bgIndex]}}');" flex>
         <div id="gameContent" layout="column" layout-align="start center">
           <div flex id="countdownContainer" ng-show="state=='countdown' && secondsToStart < 4" flex layout="column" layout-align="center center">
             <div id="countdown" class="count-value-{{secondsToStart}}">{{secondsToStart}}</div>
@@ -75,20 +75,27 @@
             </div>
           </div>
           <div flex id="getaway" ng-show="state==='intermission'" layout="column" layout-align="start center">
-            <br />
-            <span>Your heist time was {{heistSeconds | date: 'm:ss'}}</span>
-            <span>Prepare the getaway!</span>
-            <br />
-            <img id="layout" src="{{getawayLayout}}" />
+            <div>
+              <br />
+              <span>Your heist time was {{heistSeconds | date: 'm:ss'}}</span>
+              <br />
+              <span>Prepare the getaway!</span>
+              <br />
+            </div>
+            <div id="layout" class="imgDiv" flex style="background-image: url({{getawayLayout}});"></div>
           </div>
-          <div flex id="result" ng-show="state==='postgame'" layout="column" layout-align="start center">
-            <br />
-            <span>Your heist time was {{heistSeconds | date: 'm:ss'}}</span>
-            <span>
-              You had {{getawayTimeRemaining | date: 'm:ss'}} left in your getaway!
-            </span>
-            <img id="result" ng-hide="failed" src="{{game.result}}" />
-            <div ng-show="failed">
+          <div flex id="gameResult" ng-show="state==='postgame'" layout="column" layout-align="start center">
+            <div>
+              <br />
+              <span>Your heist time was {{heistSeconds | date: 'm:ss'}}</span>
+              <br />
+              <span>
+                You had {{getawayTimeRemaining | date: 'm:ss'}} left in your getaway!
+              </span>
+              <br />
+            </div>
+            <div id="resultImg" class="imgDiv" flex ng-hide="failed" style="background-image: url({{game.result}});"></div>
+            <div flex ng-show="failed" layout="column" layout-align="center center">
               <h1 style="color: red;">BUSTED!</h1>
               <span ng-hide="timer > 0">Your time ran out!</span>
             </div>

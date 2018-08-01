@@ -21,17 +21,14 @@ body {
 }
 
 #selectGame {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   min-height: 100%;
 }
 
 .md-button.oval {
-  border-radius: 18px;
-  font-size: 14px;
+  border-radius: 35px;
+  font-size: 16pt;
   margin: 0 auto 20px auto;
-  padding: 0 10px;
+  padding: 15px;
 }
 
 .md-button.outline {
@@ -42,20 +39,30 @@ body {
   margin: 20px;
 }
 
+.imgDiv {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 #game {
   color: white;
   text-align: center;
   width: 100%;
 }
 
-#result {
+#layout, #resultImg {
   width: 100%;
-  max-width: 309px;
+  min-height: 300px;
+  margin: 5px 0;
 }
 
 #layout {
-  width: 100%;
-  max-width: 1099px;
+  max-height: 801px;
+}
+
+#resultImg {
+  max-height: 792px;
 }
 
 #overlay {
@@ -68,7 +75,7 @@ body {
   height: 100%
 }
 
-#game>div {
+#game>div, #gameContent>div {
   width: 100%;
 }
 
@@ -81,18 +88,16 @@ body {
 }
 
 #gameWindow {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   transition: background-image 1s;
 }
 
 #gameContent {
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   width: 100%;
   height: 100%;
   background: rgba(33,33,33,0.6);
-  font-size: 16pt;
+  font-size: 18pt;
 }
 
 #gateIndicatorWrapper {
