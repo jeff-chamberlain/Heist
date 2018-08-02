@@ -24,6 +24,10 @@ body {
   min-height: 100%;
 }
 
+#calloutButtons {
+  display: none;
+}
+
 .md-button.oval {
   border-radius: 35px;
   font-size: 16pt;

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="Cache-control" content="public">
 
     <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.ico" /> -->
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
@@ -33,14 +34,14 @@
     <div id="selectGame" layout="column" layout-align="start center" ng-show="!loading && state==='select'">
       <img id="logo" src="./img/Logo.png" />
       <h1>SELECT YOUR HEIST</h1>
-      <div flex="noshrink" layout="column" layout-align="center center">
+      <div flex="noshrink" layout="column" layout-align="start center">
         <div ng-repeat="(key, heist) in heists" style="width:100%;" layout-align="center center">
           <md-button class="md-raised md-primary oval" style="width:100%;" ng-click="selectGame(key)">
             {{heist.name}}
           </md-button>
         </div>
       </div>
-      <div flex="noshrink" layout="row">
+      <div id="calloutButtons" flex="noshrink" layout="row">
         <div flex layout="row" layout-align="end center">
           <md-button class="md-primary outline" ng-href="#" target="_blank">Buy the game</md-button>
         </div>

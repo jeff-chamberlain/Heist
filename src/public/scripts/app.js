@@ -307,15 +307,6 @@ angular.module('heistApp', ['ngMaterial'])
 
 		var imgSources = [
 			'./img/Logo.png',
-			'./img/gas_result.jpg',
-			'./img/bank_result.jpg',
-			'./img/casino_result.jpg',
-			'./img/mansion_result.jpg',
-			'./img/getaway0.png',
-			'./img/getaway2.png',
-			'./img/getaway4.png',
-			'./img/getaway5.png',
-			'./img/getaway6.png'
 		];
 
 		preloader.preloadImages ( imgSources )
